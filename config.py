@@ -1,0 +1,70 @@
+from dotenv import load_dotenv
+
+load_dotenv()  # This will load the variables from .env into os.environ
+
+import os
+
+
+class BOT:
+    """
+    TOKEN: Bot token generated from @BotFather
+    """
+    TOKEN = os.environ.get("TOKEN", "")
+
+
+class API:
+    """
+    HASH: Telegram API hash from https://my.telegram.org
+    ID = Telegram API ID from https://my.telegram.org
+    """
+    HASH = os.environ.get("API_HASH", "")
+    ID = int(os.environ.get("API_ID", 0))
+
+
+class OWNER:
+    """
+    ID: Owner's user id, get it from @userinfobot
+    """
+    ID = int(os.environ.get("OWNER", 0))
+
+
+class CHANNEL:
+    """
+    ID: Telegram Channel ID where the bot will post automatically
+    """
+    ID = int(os.environ.get("CHANNEL_ID", 0))
+
+
+class WEB:
+    """
+    PORT: Specific port no. on which you want to run your bot, DON'T TOUCH IT IF YOU DON'T KNOW WHAT IS IT.
+    """
+    PORT = int(os.environ.get("PORT", 5090))
+
+
+class NETWORK:
+    """
+    PROXY: Optional HTTP/HTTPS or SOCKS5 proxy to bypass ISP blocks (e.g. 'http://127.0.0.1:8080' or 'socks5://127.0.0.1:1080')
+    BASE_URL: Custom base URL override (optional, defaults to auto-resolving from WWW.1TAMILMV.FI)
+    """
+    PROXY = os.environ.get("PROXY", "")
+    BASE_URL = os.environ.get("BASE_URL", "")
+
+
+class DATABASE:
+    """
+    MONGO_URI: MongoDB connection string (keeps state across redeploys). Empty = bot runs without saving state.
+    DB_NAME: Mongo database name
+    """
+    MONGO_URI = os.environ.get("MONGO_URI", "")
+    DB_NAME = os.environ.get("DB_NAME", "rssbot")
+
+
+class LIMITS:
+    """
+    POST_LIMIT: Max topics posted per check cycle. Extra backlog carries to the next cycle.
+    CATCHUP_INTERVAL: Seconds to wait before the next cycle while backlog remains.
+    """
+    POST_LIMIT = int(os.environ.get("POST_LIMIT", 5))
+    CATCHUP_INTERVAL = int(os.environ.get("CATCHUP_INTERVAL", 120))
+

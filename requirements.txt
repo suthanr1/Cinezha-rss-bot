@@ -1,0 +1,16 @@
+aiohttp[speedups]
+pyrotgfork
+python-dotenv
+TgCrypto
+feedparser
+Flask
+cloudscraper
+requests
+beautifulsoup4
+lxml
+torrent-parser
+bencodepy
+certifi
+urllib3
+setuptools
+pymongo[srv]
